@@ -7,7 +7,7 @@ on:
 jobs:
 
   ProtobufDumper:
-    name: ProtobufDumper 
+    name: ProtobufDumper-ubuntu
 
     runs-on: ubuntu-latest
 
