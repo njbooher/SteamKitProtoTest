@@ -2,20 +2,14 @@ name: CI/CD
 
 on:
   push:
-    branches: [ master]
+    branches: [ master ]
 
 jobs:
 
   ProtobufDumper:
-    name: ProtobufDumper - ${{ matrix.platform }} - ${{ matrix.configuration }}
+    name: ProtobufDumper 
 
-    strategy:
-      matrix:
-        configuration: [ Debug, Release ]
-        platform: [ Win32, x64 ]
-      fail-fast: false
-
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # https://learn.microsoft.com/en-us/vcpkg/consume/binary-caching-github-actions-cache
     env:
@@ -39,12 +33,12 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Build ProtobufDumper
-      run: dotnet build --configuration ${{ matrix.configuration }} Resources/ProtobufDumper/ProtobufDumper.sln
+      run: dotnet build --configuration Release Resources/ProtobufDumper/ProtobufDumper.sln
         
     - name: Upload ProtobufDumper
       uses: actions/upload-artifact@v4
       with:
-        name: ProtobufDumper-${{ matrix.platform }}
-        path: 'Resources/ProtobufDumper/*'
+        name: ProtobufDumper
+        path: 'Resources/ProtobufDumper/bin/Release*'
 
 
