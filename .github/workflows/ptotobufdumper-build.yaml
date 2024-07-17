@@ -2,7 +2,7 @@ name: CI/CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master]
 
 jobs:
 
@@ -14,6 +14,8 @@ jobs:
         configuration: [ Debug, Release ]
         platform: [ Win32, x64 ]
       fail-fast: false
+
+    runs-on: windows-latest
 
     # https://learn.microsoft.com/en-us/vcpkg/consume/binary-caching-github-actions-cache
     env:
@@ -44,3 +46,5 @@ jobs:
       with:
         name: ProtobufDumper-${{ matrix.platform }}
         path: 'Resources/ProtobufDumper/${{ matrix.platform }}/${{ matrix.configuration }}/*'
+
+
