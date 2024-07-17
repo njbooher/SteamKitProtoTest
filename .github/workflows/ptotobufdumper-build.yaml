@@ -7,7 +7,7 @@ on:
 jobs:
 
   ProtobufDumper:
-    name: ProtobufDumper-ubuntu
+    name: ProtobufDumper
 
     runs-on: ubuntu-latest
 
@@ -27,7 +27,7 @@ jobs:
     - name: Upload ProtobufDumper
       uses: actions/upload-artifact@v4
       with:
-        name: ProtobufDumper
+        name: ProtobufDumper-ubuntu
         path: 'Resources/ProtobufDumper/ProtobufDumper/bin/Release/*'
 
 
