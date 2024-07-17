@@ -45,6 +45,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ProtobufDumper-${{ matrix.platform }}
-        path: 'Resources/ProtobufDumper/${{ matrix.platform }}/${{ matrix.configuration }}/*'
+        path: 'Resources/ProtobufDumper/*'
 
 
