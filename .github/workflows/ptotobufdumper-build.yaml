@@ -39,6 +39,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ProtobufDumper
-        path: 'Resources/ProtobufDumper/bin/Release*'
+        path: 'Resources/ProtobufDumper/bin/Release/*'
 
 
